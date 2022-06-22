@@ -22,6 +22,7 @@ public class ServletTest10Controller extends HttpServlet {
 	    }
 	};
 	
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		response.setContentType("text/html");
@@ -30,15 +31,15 @@ public class ServletTest10Controller extends HttpServlet {
 		
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
-		String name = request.getParameter("name");
+		
 		
 		out.println("<html><head></head><body>");
-		if(userMap.get(id) != "quinkman") {
-			out.println("id가 일치하지 않습니다");
-		} else if(userMap.get(password) != "asdf") {
-			out.println("password가 일치하지 않습니다");
+		if(!id.equals(userMap.get("id"))) {
+			out.println("아이디가 일치하지 않습니다");
+		} else if(!password.equals(userMap.get("password"))) {
+			out.println("비밀번호가 일치하지 않습니다");
 		} else {
-			out.println("<b>" + name + "님 환영합니다.");
+			out.println("<b>" + userMap.get("name") + "님 환영합니다.");
 		}
 		out.println("</body></html>");
 		
