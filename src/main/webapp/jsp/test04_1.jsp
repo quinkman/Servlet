@@ -14,7 +14,37 @@
 </head>
 <body>
 	
+	<%
+		int number1 = Integer.parseInt(request.getParameter("number1"));
+		int number2 = Integer.parseInt(request.getParameter("number2"));
+		String optionString = request.getParameter("option");
+		
+		double result = 0;
+		String option = "";
+		if(optionString.equals("plus")) {
+			result = number1 + number2;
+			option = "+";
+		} else if(optionString.equals("minus")) {
+			result = number1 - number2;
+			option = "-";
+		} else if(optionString.equals("multiple")) {
+			result = number1 * number2;
+			option = "X";
+		} else {
+			result = number1 / (double)number2;
+			option = "/";
+		}
+		
+	%>
 	
+	<div>
+		<h3>계산 결과</h3>
+		
+		<div class="display-4">
+			<%= number1 %> <%= option %> <%= number2 %> = <span class="text=primary"> <%= result %></span>
+		</div>
+		
+	</div>
 	
 	
 </body>
