@@ -84,8 +84,8 @@
     		<tr>
     			
     			<td><%= id %></td>
-    			<td><img width="150" height="150" src="<%= image%>"></td>
-    			<td><a href=""><%= title %></td>
+    			<td><img width="100" height="100" src="<%= image%>"></td>
+    			<td><a href="/jsp/test08_2.jsp?book_id=<%= id %>"><%= title %></a></td>
     			
     		</tr>
     		<% } %>
